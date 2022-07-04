@@ -1,0 +1,237 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" >
+    <link rel="stylesheet" href="{% static 'elapp/css/elstyle1.css' %}">
+    <title>Home.</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light py-3" style="background-color: #030B58 ;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-family: Comic Sans, Comic Sans MS, cursive; font-size: 30px; color: aliceblue;"> <i class="fas fa-laptop-code"></i> EduWEB</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home-page' %}" style="font-size: large; color: aliceblue;">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="Courses" role="button" style="font-size: large; color: aliceblue;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Courses
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="Courses">
+                            <a class="dropdown-item" href="{% url 'c-programming-page' %}">C Programming Tutorials</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'python-page' %}">Python BootCamp 2022</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'dsa-page' %}">Data Structures And Algorithms</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'oop-page' %}">Object Oriented Programming Using Java/C++</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'androidApp-page' %}">Android App Development </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'webDev-page' %}">Web Development Bootcamp 2022</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"> Placement Preparation Tips & Tricks</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="Company" role="button" style="font-size: large; color: aliceblue;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Company
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="Company">
+                            <a class="dropdown-item" href="#">ProductBase Company</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">ServiceBase Company</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Top MNCs</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Big 4 Companies</a>
+                        </div>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="Settings" role="button" style="font-size: large; color: aliceblue;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Settings
+                        </a>
+                            <div class="dropdown-menu" aria-labelledby="Settings">
+                                <a class="dropdown-item" href="{% url 'profile-update-page' %}">Edit Profile</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'change-password-page' %}">Change Password</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'logout-page' %}">Logout</a>
+                            </div>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+         <div class="mr-5">
+             <center>
+             {% if user.is_authenticated %}
+                <a href="{% url 'home-page' %}" style="font-style: italic; font-size: 20px; color: #ACDEF5;">Hi, {{user.first_name}}&nbsp;{{user.last_name}}</a>
+             {% endif %}
+             <a href="{% url 'profile-update-page' %}" style="color: #ACDEF5;"><i class="fas fa-user fa-2x"></i></a>
+             </center>
+         </div>
+    </nav>
+    <div id="background1" class="bg-image shadow-2-strong" style="margin-top: 95px;">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.4);">
+            <div class="container d-flex align-items-center justify-content-center text-center h-100" >
+                <div class="text-white"> <br>
+                    <h1 style="margin-top: 250Px;">Let's grow your education with EduWEB</h1> <br>
+                    <a class="btn btn-outline-light btn-lg mr-2" style="margin-bottom: 250px;" href="#start_learning" role="button">Start Learning</a>
+                    <a class="btn btn-outline-light btn-lg ml-2" style="margin-bottom: 250px;" href="#course" role="button">Courses</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="background-color: #F2F1FE;" id="start_learning"> <br> <br>
+        <center><h2 style="font-family: Times New Roman, Times, serif;"><b>PROGRAMMING</b></h2></center>
+          <br> <br>
+        <div class="container" style="font-size: 17px; font-family: Times New Roman, Times, serif;">
+            <h5><b>What is Programming ?</b></h5> <br>
+            <p><b>
+                Programming is an exercise or practice that boost our logical thinking and improves problem-solving skill.
+                It teaches us how to accomplish a task with the help of a computer program or software. Therefore, in simple
+                terms, programming is a task to implement a solution to a problem in the form of computer language. In this
+                section, we will discuss the word programming, programming languages, its type, advantages, disadvantages,
+                and their uses.</b>
+            </p> <br>
+            <h5><b>Definition of Programming</b></h5> <br>
+            <p><b>
+                In computer science fields, the word program characterizes what a computer actually does and this process is
+                known as programming.
+                We can also define the term programming as it is the process that models or structure the set of instructions
+                that instruct the machine how to perform a task and what to perform. It can be done using a variety of programming
+                languages such as C, C++, C#, Python, Java, etc.
+                </b>
+            </p> <br>
+            <h5><b>Advantages of Programming</b></h5> <br>
+            <ul>
+                <li style="list-style-type: circle;"><b>It enhances problem-solving skills.</b></li>
+                <li style="list-style-type: circle;"><b>Using programming, we can solve complex problems.</b></li>
+                <li style="list-style-type: circle;"><b>It is also learning with fun.</b></li>
+                <li style="list-style-type: circle;"><b>It can perform multiple tasks can be bundled into one module.</b></li>
+                <li style="list-style-type: circle;"><b>It saves time and effort.</b></li>
+            </ul> <br>
+        </div>
+        <div class="container"> <br>
+        <center>
+            <h3 style="font-family: Times New Roman, Times, serif;"><b>Descriptions</b></h3> <br>
+        <div class="col-md-8">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/EByDFE6zFPU" frameborder="3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+            </div>
+        </div>
+        </center> <br>
+    </div> <br>
+    </div>
+
+    <div class="container-fluid col-10" id="course">
+        <br><br>
+        <div class="container">
+            <h2 style="font-family: Times New Roman, Times, serif; color: #0A0C9B ;"><b>Courses</b></h2> <br>
+            <div class="row">
+                <div class="col-md m-2 card" style="background-color: rgba(0, 0, 0, 0.05);">
+                    <img class="card-img-top mt-4" src="/static/elapp/images/img5.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">C Programming</h5>
+                        <p class="card-text">C Programming Tutorials</p>
+                        <a href="{% url 'c-programming-page' %}" class="btn btn-outline-dark btn-lg">Course</a>
+                    </div>
+                </div>
+                <div class="col-md m-2 card" style="background-color: rgba(0, 0, 0, 0.05);">
+                    <img class="card-img-top mt-4" src="/static/elapp/images/img6.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Python BootCamp 2022</h5>
+                        <p class="card-text">Python Programming Tutorials</p>
+                        <a href="{% url 'python-page' %}" class="btn btn-outline-primary btn-lg">Course</a>
+                    </div>
+                </div>
+                 <div class="col-md m-2 card" style="background-color: rgba(0, 0, 0, 0.05);">
+                    <img class="card-img-top mt-4" src="/static/elapp/images/img7.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Structures and Algorithms</h5>
+                        <p class="card-text">Data Structures and Algorithms Tutorials</p>
+                        <a href="{% url 'dsa-page' %}" class="btn btn-outline-success btn-lg">Course</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md m-2 card" style="background-color: rgba(0, 0, 0, 0.05);">
+                    <img class="card-img-top mt-4" src="/static/elapp/images/img8.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Object Oriented Programming Using Java/C++</h5>
+                        <p class="card-text">Object Oriented Programming Using Java/C++ Tutorials</p>
+                        <a href="{% url 'oop-page' %}" class="btn btn-outline-dark btn-lg">Course</a>
+                    </div>
+                </div>
+                <div class="col-md m-2 card" style="background-color: rgba(0, 0, 0, 0.05);">
+                    <img class="card-img-top mt-4" src="/static/elapp/images/img9.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Android App Development</h5>
+                        <p class="card-text">Android App Development Tutorials</p>
+                        <a href="{% url 'androidApp-page' %}" class="btn btn-outline-primary btn-lg">Course</a>
+                    </div>
+                </div>
+                 <div class="col-md m-2 card" style="background-color: rgba(0, 0, 0, 0.05);">
+                    <img class="card-img-top mt-4" src="/static/elapp/images/img10.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Web Development Bootcamp 2022</h5>
+                        <p class="card-text">Web Development Bootcamp 2022 Tutorials</p>
+                        <a href="{% url 'webDev-page' %}" class="btn btn-outline-success btn-lg">Course</a>
+                    </div>
+                </div>
+            </div>
+        </div> <br><br>
+    </div>
+    <div class="pt-5 pb-5 footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-xs-12 follow-us">
+                  <h4 class="mt-lg-0 mt-sm-3">Follow Us On Social Media</h4>
+                  <p class="pr-5 text-white-50">Teaching in the Internet age means we must teach tomorrow’s skills today. </p>
+                  <p><a href="#" style="color: white;"><i class="fab fa-facebook-f mr-3"></i></a><a href="#" style="color: white;"><i class="fab fa-instagram mr-3"></i></a><a href="#" style="color: white;"><i class="fab fa-youtube mr-3"></i></a><a href="#" style="color: white;"><i class="fab fa-twitter"></i></a></p>
+                </div>
+                <div class="col-lg-3 col-xs-12 overview">
+                    <h4 class="mt-lg-0 mt-sm-3">Overview</h4>
+                    <ul class="m-0 p-0" style="list-style-type: none;" >
+                        <li>- <a href="#" class="text-white">Blog</a></li>
+                        <li>- <a href="#" class="text-white">Careers</a></li>
+                        <li>- <a href="#" class="text-white">Stay Updated</a></li>
+                        <li>- <a href="#" class="text-white">Help</a></li>
+                        <li>- <a href="#" class="text-white">API</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-xs-12 contact-us">
+                  <h4 class="mt-lg-0 mt-sm-3">Contact Us</h4>
+                  <p><i class="fas fa-map-marker-alt mr-2"></i> Kolkata, India</p>
+                  <p><i class="fas fa-phone mr-2"></i> +91 9876543210</p>
+                  <p><i class="far fa-envelope mr-2"></i> elearning2022@eduweb.com</p>
+                </div>
+          </div>
+          <div class="row mt-5">
+                <div class="col copyright">
+                    <p class="text-white-50">CopyRight 2022 &copy; EduWEB RajashriMondal<br> All Rights Reserved.</p>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-white-50"> About Us |</a><a href="#" class="text-white-50"> Terms & Conditions |</a><a href="#" class="text-white-50"> Privacy Policies</a>
+                </div>
+          </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>

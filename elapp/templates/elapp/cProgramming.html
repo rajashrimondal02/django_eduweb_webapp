@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" >
+    <link rel="stylesheet" href="{% static 'elapp/css/elstyle1.css' %}">
+    <title>C Programming.</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light py-3" style="background-color: #030B58 ;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-family: Comic Sans, Comic Sans MS, cursive; font-size: 30px; color: aliceblue;"> <i class="fas fa-laptop-code"></i> EduWEB</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home-page' %}" style="font-size: large; color: aliceblue;">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="Courses" role="button" style="font-size: large; color: aliceblue;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Courses
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="Courses">
+                            <a class="dropdown-item" href="{% url 'c-programming-page' %}">C Programming Tutorials</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'python-page' %}">Python BootCamp 2022</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'dsa-page' %}">Data Structures And Algorithms</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'oop-page' %}">Object Oriented Programming Using Java/C++</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'androidApp-page' %}">Android App Development </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'webDev-page' %}">Web Development Bootcamp 2022</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"> Placement Preparation Tips & Tricks</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="Company" role="button" style="font-size: large; color: aliceblue;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Company
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="Company">
+                            <a class="dropdown-item" href="#">ProductBase Company</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">ServiceBase Company</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Top MNCs</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Big 4 Companies</a>
+                        </div>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="Settings" role="button" style="font-size: large; color: aliceblue;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Settings
+                        </a>
+                            <div class="dropdown-menu" aria-labelledby="Settings">
+                                <a class="dropdown-item" href="{% url 'profile-update-page' %}">Edit Profile</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'change-password-page' %}">Change Password</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'logout-page' %}">Logout</a>
+                            </div>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+         <div class="mr-5">
+             <center>
+             {% if user.is_authenticated %}
+                <a href="{% url 'c-programming-page' %}" style="font-style: italic; font-size: 20px; color: #ACDEF5;">Hi, {{user.first_name}}&nbsp;{{user.last_name}}</a>
+             {% endif %}
+             <a href="{% url 'profile-update-page' %}" style="color: #ACDEF5;"><i class="fas fa-user fa-2x"></i></a>
+             </center>
+         </div>
+    </nav>
+    <div class="container card" style="background-color: #E3EDF2; margin-top: 95px;"> <br> <br>
+        <center><h2>C Programming</h2></center>
+          <br>
+        <div class="container col-10" style="font-size: 17px; font-family: Times New Roman, Times, serif;">
+            <p>
+            <b>C is a general-purpose programming language that is extremely popular, simple,
+                and flexible to use. It is a structured programming language that is machine-independent and
+                extensively used to write various applications, Operating Systems like
+                Windows, and many other complex programs like Oracle database, Git, Python interpreter, and more. <br> <br>
+
+                It is said that ‘C’ is a god’s programming language. One can say, C is a base for the programming. If you know ‘C,’
+                you can easily grasp the knowledge of the other programming languages that uses the concept of ‘C’.<br><br>
+
+                It is essential to have a background in computer memory mechanisms because it is an
+                important aspect when dealing with the C programming language. <br><br> </b>
+            </p> <br>
+            <h5><b>Why to learn C Programming ?</b></h5> <br>
+            <p style="font-size: 16px;"><b>C programming language is a MUST for students and working professionals to become a
+                great Software Engineer specially when they are working in Software Development Domain.<br>
+                I will list down some of the key advantages of learning C Programming: <br> </b>
+            </p>
+            <ul>
+                <li style="list-style-type: circle;"><b>Easy to learn</b></li>
+                <li style="list-style-type: circle;"><b>Structured language</b></li>
+                <li style="list-style-type: circle;"><b>It produces efficient programs</b></li>
+                <li style="list-style-type: circle;"><b>It can handle low-level activities</b></li>
+                <li style="list-style-type: circle;"><b>It can be compiled on a variety of computer platforms</b></li>
+            </ul>
+            <br>
+            <h5><b>Applications of C Programming</b></h5> <br>
+            <p style="font-size: 16px;"><b>C was initially used for system development work, particularly the  programs that make-up
+                the operating system. C was adopted as a system development language because it produces code that runs nearly as
+                fast as the code written in assembly language. Some examples of the use of C are :<br> </b>
+            </p>
+            <ul>
+                <li style="list-style-type: circle;"><b>Operating Systems</b></li>
+                <li style="list-style-type: circle;"><b>Language Compilers</b></li>
+                <li style="list-style-type: circle;"><b>Assemblers</b></li>
+                <li style="list-style-type: circle;"><b>Text Editors</b></li>
+                <li style="list-style-type: circle;"><b>Print Spoolers</b></li>
+                <li style="list-style-type: circle;"><b>Network Drivers</b></li>
+                <li style="list-style-type: circle;"><b>Modern Programs</b></li>
+                <li style="list-style-type: circle;"><b>Databases</b></li>
+                <li style="list-style-type: circle;"><b>Language Interpreters</b></li>
+                <li style="list-style-type: circle;"><b>Utilities</b></li>
+            </ul>
+            <br>
+        </div>
+    </div>
+    <div class="container-fluid" style="background-color: white;"> <br><br>
+        <center>
+        <h3>Tutorials</h3> <br><br>
+        <div class="col-10">
+            <div class="row">
+                <div class="col-md">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/rLf3jnHxSmU" title="YouTube video player" frameborder="3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/fO4FwJOShdc" title="YouTube video player" frameborder="3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-md">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/Rl9w0hVxuRw" title="YouTube video player" frameborder="3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div> <br>
+                <div class="col-md">
+                     <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/VXol2-SoUy8" title="YouTube video player" frameborder="3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </center> <br><br>
+    </div> <br>
+    <div class="pt-5 pb-5 footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-xs-12 follow-us">
+                  <h4>Follow Us On Social Media</h4>
+                  <p class="pr-5 text-white-50">Teaching in the Internet age means we must teach tomorrow’s skills today. </p>
+                  <p><a href="#" style="color: white;"><i class="fab fa-facebook-f mr-3"></i></a><a href="#" style="color: white;"><i class="fab fa-instagram mr-3"></i></a><a href="#" style="color: white;"><i class="fab fa-youtube mr-3"></i></a><a href="#" style="color: white;"><i class="fab fa-twitter"></i></a></p>
+                </div>
+                <div class="col-lg-3 col-xs-12 overview">
+                    <h4 class="mt-lg-0 mt-sm-3">Overview</h4>
+                    <ul class="m-0 p-0" style="list-style-type: none;" >
+                        <li>- <a href="#" class="text-white">Blog</a></li>
+                        <li>- <a href="#" class="text-white">Careers</a></li>
+                        <li>- <a href="#" class="text-white">Stay Updated</a></li>
+                        <li>- <a href="#" class="text-white">Help</a></li>
+                        <li>- <a href="#" class="text-white">API</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-xs-12 contact-us">
+                  <h4 class="mt-lg-0 mt-sm-3">Contact Us</h4>
+                  <p><i class="fas fa-map-marker-alt mr-2"></i> Kolkata, India</p>
+                  <p><i class="fas fa-phone mr-2"></i> +91 9876543210</p>
+                  <p><i class="far fa-envelope mr-2"></i> elearning2022@eduweb.com</p>
+                </div>
+          </div>
+          <div class="row mt-5">
+                <div class="col copyright">
+                    <p class="text-white-50">CopyRight 2022 &copy; EduWEB Rajashri Mondal<br> All Rights Reserved.</p>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-white-50"> About Us |</a><a href="#" class="text-white-50"> Terms & Conditions |</a><a href="#" class="text-white-50"> Privacy Policies</a>
+                </div>
+          </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>

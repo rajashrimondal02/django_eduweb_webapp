@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" >
+    <link rel="stylesheet" href="{% static 'elapp/css/elstyle1.css' %}">
+    <title>Android App Development.</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light py-3" style="background-color: #030B58 ;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-family: Comic Sans, Comic Sans MS, cursive; font-size: 30px; color: aliceblue;"> <i class="fas fa-laptop-code"></i> EduWEB</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home-page' %}" style="font-size: large; color: aliceblue;">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="Courses" role="button" style="font-size: large; color: aliceblue;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Courses
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="Courses">
+                            <a class="dropdown-item" href="{% url 'c-programming-page' %}">C Programming Tutorials</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'python-page' %}">Python BootCamp 2022</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'dsa-page' %}">Data Structures And Algorithms</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'oop-page' %}">Object Oriented Programming Using Java/C++</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'androidApp-page' %}">Android App Development </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'webDev-page' %}">Web Development Bootcamp 2022</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"> Placement Preparation Tips & Tricks</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="Company" role="button" style="font-size: large; color: aliceblue;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Company
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="Company">
+                            <a class="dropdown-item" href="#">ProductBase Company</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">ServiceBase Company</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Top MNCs</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Big 4 Companies</a>
+                        </div>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="Settings" role="button" style="font-size: large; color: aliceblue;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Settings
+                        </a>
+                            <div class="dropdown-menu" aria-labelledby="Settings">
+                                <a class="dropdown-item" href="{% url 'profile-update-page' %}">Edit Profile</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'change-password-page' %}">Change Password</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'logout-page' %}">Logout</a>
+                            </div>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+         <div class="mr-5">
+             <center>
+             {% if user.is_authenticated %}
+                <a href="{% url 'androidApp-page' %}" style="font-style: italic; font-size: 20px; color: #ACDEF5;">Hi, {{user.first_name}}&nbsp;{{user.last_name}}</a>
+             {% endif %}
+             <a href="{% url 'profile-update-page' %}" style="color: #ACDEF5;"><i class="fas fa-user fa-2x"></i></a>
+             </center>
+         </div>
+    </nav>
+    <div class="container card" style="background-color: #E6FAE6; margin-top: 95px;"> <br><br>
+        <center><h2>Android App Development</h2></center>
+          <br>
+        <div class="container col-10" style="font-size: 17px; font-family: Times New Roman, Times, serif;">
+            <p><b>
+                This Android app development tutorial is not just for aspiring Android Developers but also for tech
+                entrepreneurs looking to build a next-gen mobile app. Learn the basic concepts and core essentials
+                of Android app development ranging from Android UI, Broadcast Receivers, Content Providers, and more. <br><br>
+
+                So you want to learn Android app development? While it may seem daunting to become one of the 5.9 million
+                people who provide Android app development services, the demand for Android software development continues
+                to grow as many organizations around the world face an IT skills shortage. <br><br>
+
+                So, how hard is it to program an Android app? In this Android app development tutorial, we’ll learn about
+                Android app development basic concepts and best practices on how to develop an Android app from scratch.</b>
+            </p> <br>
+            <h4><b>How to Develop Android Apps</b></h4> <br>
+            <p>
+                <b>With an idea for an android mobile app in mind, the next step is development. There are three main
+                    approaches to develop an Android app, each with various pros and cons.<br> </b>
+            </p>
+            <h5><b>1. Android app builders</b></h5>
+            <p><b>
+                Using Android app builders (no-code drag and drop app creation) can get an idea into the Google Play store quickly.
+                But it often leads to sub-par results.
+                </b>
+            </p>
+            <h5><b>2. Learning Android app development</b></h5>
+            <p><b>
+                If you are looking to make an Android app solo, or are looking for information on how to develop Android apps to become
+                a competitive software developer, The time it takes to learn how to program Android apps can hold you back an idea from
+                developing it quickly and with best practices.
+                </b>
+            </p>
+            <h5><b>3. Hiring expert support</b></h5>
+            <p><b>
+                In a competitive marketplace, getting an app created quickly can mean the difference between standing out and failure.
+                Sometimes the best option for how to program Android apps is to hire out: either an agency that provides web app development
+                services (team of expert developers and UX designers or a freelancer (solo developer). A team often comes with greater
+                expertise and flexibility, not to mention reliability, to meet business goals.
+                </b>
+            </p>
+            <p><b>
+                If you are looking to make an Android app solo, or are looking for information on how to develop Android apps to become a
+                competitive software developer, this guide is the right place to start.
+                </b>
+            </p>
+            <br>
+        </div>
+    </div>
+    <div class="container" style="background-color: white;"> <br><br>
+        <center>
+        <h3>Tutorials</h3> <br> <br>
+        <div class="col-md-8">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/mXjZQX3UzOs" frameborder="3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+            </div>
+        </div>
+        </center> <br><br>
+    </div> <br>
+    <div class="pt-5 pb-5 footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-xs-12 follow-us">
+                  <h4 class="mt-lg-0 mt-sm-3">Follow Us On Social Media</h4>
+                  <p class="pr-5 text-white-50">Teaching in the Internet age means we must teach tomorrow’s skills today. </p>
+                  <p><a href="#" style="color: white;"><i class="fab fa-facebook-f mr-3"></i></a><a href="#" style="color: white;"><i class="fab fa-instagram mr-3"></i></a><a href="#" style="color: white;"><i class="fab fa-youtube mr-3"></i></a><a href="#" style="color: white;"><i class="fab fa-twitter"></i></a></p>
+                </div>
+                <div class="col-lg-3 col-xs-12 overview">
+                    <h4 class="mt-lg-0 mt-sm-3">Overview</h4>
+                    <ul class="m-0 p-0" style="list-style-type: none;" >
+                        <li>- <a href="#" class="text-white">Blog</a></li>
+                        <li>- <a href="#" class="text-white">Careers</a></li>
+                        <li>- <a href="#" class="text-white">Stay Updated</a></li>
+                        <li>- <a href="#" class="text-white">Help</a></li>
+                        <li>- <a href="#" class="text-white">API</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-xs-12 contact-us">
+                  <h4 class="mt-lg-0 mt-sm-3">Contact Us</h4>
+                  <p><i class="fas fa-map-marker-alt mr-2"></i> Kolkata, India</p>
+                  <p><i class="fas fa-phone mr-2"></i> +91 9876543210</p>
+                  <p><i class="far fa-envelope mr-2"></i> elearning2022@eduweb.com</p>
+                </div>
+          </div>
+          <div class="row mt-5">
+                <div class="col copyright">
+                    <p class="text-white-50">CopyRight 2022 &copy; EduWEB RajashriMondal<br> All Rights Reserved.</p>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-white-50"> About Us |</a><a href="#" class="text-white-50"> Terms & Conditions |</a><a href="#" class="text-white-50"> Privacy Policies</a>
+                </div>
+          </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'elapp/css/elstyle2.css' %}">
+    <title>Login.</title>
+</head>
+<body>
+    <section>
+        <div class="imgBx">
+            <img src="/static/elapp/images/img3.jpeg">
+        </div>
+        <div class="contentBx">
+            <div class="formBx">
+                <h2>Welcome, Let's Login!</h2>
+                <form name="user_login" method="post">
+                    {% csrf_token %}
+                    <div class="inputBx">
+                        <span><b>Username</b></span>
+                        <input type="text" name="username">
+                    </div>
+                    <div class="inputBx">
+                        <span><b>Password</b></span>
+                        <input type="password" name="password">
+                    </div>
+                    <div class="remember">
+                        <label><input type="checkbox"> Clicking this you accept our terms and conditions.</label>
+                    </div>
+                    <div class="inputBx">
+                        <input type="submit" value="Login">
+                    </div>
+                    <div class="inputBx">
+                        <p>Don't have any account ? Then <a href="{% url 'registration-page' %}">Register</a> </p>
+                    </div>
+                    <br>
+                    {% if messages %}
+                        {% for msg in messages %}
+                            <div class="alert alert-danger">{{ msg }}</div>
+                        {% endfor %}
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>

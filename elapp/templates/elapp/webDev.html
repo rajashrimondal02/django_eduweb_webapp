@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" >
+    <link rel="stylesheet" href="{% static 'elapp/css/elstyle1.css' %}">
+    <title>Web Development.</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light py-3" style="background-color: #030B58 ;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-family: Comic Sans, Comic Sans MS, cursive; font-size: 30px; color: aliceblue;"> <i class="fas fa-laptop-code"></i> EduWEB</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home-page' %}" style="font-size: large; color: aliceblue;">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="Courses" role="button" style="font-size: large; color: aliceblue;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Courses
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="Courses">
+                            <a class="dropdown-item" href="{% url 'c-programming-page' %}">C Programming Tutorials</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'python-page' %}">Python BootCamp 2022</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'dsa-page' %}">Data Structures And Algorithms</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'oop-page' %}">Object Oriented Programming Using Java/C++</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'androidApp-page' %}">Android App Development </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'webDev-page' %}">Web Development Bootcamp 2022</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"> Placement Preparation Tips & Tricks</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="Company" role="button" style="font-size: large; color: aliceblue;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Company
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="Company">
+                            <a class="dropdown-item" href="#">ProductBase Company</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">ServiceBase Company</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Top MNCs</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Big 4 Companies</a>
+                        </div>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="Settings" role="button" style="font-size: large; color: aliceblue;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Settings
+                        </a>
+                            <div class="dropdown-menu" aria-labelledby="Settings">
+                                <a class="dropdown-item" href="{% url 'profile-update-page' %}">Edit Profile</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'change-password-page' %}">Change Password</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'logout-page' %}">Logout</a>
+                            </div>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+         <div class="mr-5">
+             <center>
+             {% if user.is_authenticated %}
+                <a href="{% url 'webDev-page' %}" style="font-style: italic; font-size: 20px; color: #ACDEF5;">Hi, {{user.first_name}}&nbsp;{{user.last_name}}</a>
+             {% endif %}
+             <a href="{% url 'profile-update-page' %}" style="color: #ACDEF5;"><i class="fas fa-user fa-2x"></i></a>
+             </center>
+         </div>
+    </nav>
+    <div class="container card" style="background-color: #E3EDF2; margin-top: 95px;"> <br><br>
+        <center><h2>Web Development BootCamp 2022</h2></center>
+          <br>
+        <div class="container col-10" style="font-size: 17px; font-family: Times New Roman, Times, serif;">
+            <p><b>
+                Web development refers to the building, creating, and maintaining of websites. It includes aspects such as
+                web design, web publishing, web programming, and database management. It is the creation of an application
+                that works over the internet i.e. websites.<br><br>
+
+                The word Web Development is made up of two words, that is: </b>
+            </p>
+            <ul>
+                <li style="list-style-type: circle;"><b>Web: It refers to websites, web pages or anything that works over the internet.</b></li>
+                <li style="list-style-type: circle;"><b>Development: Building the application from scratch.</b></li>
+            </ul>
+            <p>
+                <b>Web Development can be classified into two ways:<br> </b>
+            </p>
+            <ul>
+                <li style="list-style-type: circle;"><b>Frontend Development</b></li>
+                <li style="list-style-type: circle;"><b>Backend Development</b></li>
+            </ul>
+            <br>
+            <h4><b>Frontend Development: </b></h4> <br>
+            <p>
+                <b>The part of a website that the user interacts directly is termed as front end. It is also referred to as the ‘client side’ of the application.<br> </b>
+            </p>
+            <ul>
+                <li style="list-style-type: circle;"><b>HTML: HTML stands for HyperText Markup Language. It is used to design the front end portion of web pages using markup language. It acts as a
+                    skeleton for a website since it is used to make the structure of a website.</b></li>
+                <li style="list-style-type: circle;"><b>CSS: Cascading Style Sheets fondly referred to as CSS is a simply designed language intended to simplify the process of making web pages presentable.
+                    It is used to style our website.</b></li>
+                <li style="list-style-type: circle;"><b>JavaScript: JavaScript is a scripting language used to provide a dynamic behavior to our website.</b></li>
+                <li style="list-style-type: circle;"><b>Bootstrap: Bootstrap (Bootstrap 4, Bootstrap 5) is a free and open-source tool collection for creating responsive websites and web applications. It is the most popular CSS
+                    framework for developing responsive, mobile-first websites. Nowadays, the websites are perfect for all the browsers (IE, Firefox, and Chrome) and for all sizes of
+                    screens (Desktop, Tablets, Phablets, and Phones).</b></li>
+            </ul>
+            <h5><b>Front End Frameworks and Libraries:</b></h5>
+            <p><b> AngularJS, React.js, VueJS, jQuery, Bootstrap, Material UI, Tailwind CSS, jQuery UI.
+            </b>
+            </p>
+            <br>
+            <h4><b>Backend Development: </b></h4> <br>
+            <p>
+                <b>Backend is the server side of a website. It is the part of the website that users cannot see and interact. It is the portion of software that does not come in direct contact with the users.
+                    It is used to store and arrange data.<br>
+                </b>
+            </p>
+            <ul>
+                <li style="list-style-type: circle;"><b>PHP: PHP is a server-side scripting language designed specifically for web development.</b></li>
+                <li style="list-style-type: circle;"><b>Java: Java is one of the most popular and widely used programming language. It is highly scalable.</b></li>
+                <li style="list-style-type: circle;"><b>Python: Python is a programming language that lets you work quickly and integrate systems more efficiently.</b></li>
+                <li style="list-style-type: circle;"><b>Node.js: Node.js is an open source and cross-platform runtime environment for executing JavaScript code outside a browser.</b></li>
+            </ul>
+            <h5><b>Back End Frameworks:</b></h5>
+            <p><b>
+                The list of back end frameworks are: Express, Django, Rails, Laravel, Spring, etc.
+            </b>
+            </p>
+            <br>
+        </div>
+    </div>
+    <div class="container" style="background-color: white;"> <br><br>
+        <center>
+        <h3>Tutorials</h3> <br> <br>
+        <div class="col-md-8">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/U9-GFVi4Uo4" frameborder="3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+            </div>
+        </div>
+        </center> <br><br>
+    </div> <br>
+    <div class="pt-5 pb-5 footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-xs-12 follow-us">
+                  <h4 class="mt-lg-0 mt-sm-3">Follow Us On Social Media</h4>
+                  <p class="pr-5 text-white-50">Teaching in the Internet age means we must teach tomorrow’s skills today. </p>
+                  <p><a href="#" style="color: white;"><i class="fab fa-facebook-f mr-3"></i></a><a href="#" style="color: white;"><i class="fab fa-instagram mr-3"></i></a><a href="#" style="color: white;"><i class="fab fa-youtube mr-3"></i></a><a href="#" style="color: white;"><i class="fab fa-twitter"></i></a></p>
+                </div>
+                <div class="col-lg-3 col-xs-12 overview">
+                    <h4 class="mt-lg-0 mt-sm-3">Overview</h4>
+                    <ul class="m-0 p-0" style="list-style-type: none;" >
+                        <li>- <a href="#" class="text-white">Blog</a></li>
+                        <li>- <a href="#" class="text-white">Careers</a></li>
+                        <li>- <a href="#" class="text-white">Stay Updated</a></li>
+                        <li>- <a href="#" class="text-white">Help</a></li>
+                        <li>- <a href="#" class="text-white">API</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-xs-12 contact-us">
+                  <h4 class="mt-lg-0 mt-sm-3">Contact Us</h4>
+                  <p><i class="fas fa-map-marker-alt mr-2"></i> Kolkata, India</p>
+                  <p><i class="fas fa-phone mr-2"></i> +91 9876543210</p>
+                  <p><i class="far fa-envelope mr-2"></i> elearning2022@eduweb.com</p>
+                </div>
+          </div>
+          <div class="row mt-5">
+                <div class="col copyright">
+                    <p class="text-white-50">CopyRight 2022 &copy; EduWEB Rajashri Mondal<br> All Rights Reserved.</p>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-white-50"> About Us |</a><a href="#" class="text-white-50"> Terms & Conditions |</a><a href="#" class="text-white-50"> Privacy Policies</a>
+                </div>
+          </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>

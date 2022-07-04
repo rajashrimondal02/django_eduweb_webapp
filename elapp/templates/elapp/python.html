@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" >
+    <link rel="stylesheet" href="{% static 'elapp/css/elstyle1.css' %}">
+    <title>Python BootCamp 2022.</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light py-3" style="background-color: #030B58 ;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-family: Comic Sans, Comic Sans MS, cursive; font-size: 30px; color: aliceblue;"> <i class="fas fa-laptop-code"></i> EduWEB</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home-page' %}" style="font-size: large; color: aliceblue;">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="Courses" role="button" style="font-size: large; color: aliceblue;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Courses
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="Courses">
+                            <a class="dropdown-item" href="{% url 'c-programming-page' %}">C Programming Tutorials</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'python-page' %}">Python BootCamp 2022</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'dsa-page' %}">Data Structures And Algorithms</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'oop-page' %}">Object Oriented Programming Using Java/C++</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'androidApp-page' %}">Android App Development </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'webDev-page' %}">Web Development Bootcamp 2022</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"> Placement Preparation Tips & Tricks</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="Company" role="button" style="font-size: large; color: aliceblue;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Company
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="Company">
+                            <a class="dropdown-item" href="#">ProductBase Company</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">ServiceBase Company</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Top MNCs</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Big 4 Companies</a>
+                        </div>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="Settings" role="button" style="font-size: large; color: aliceblue;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Settings
+                        </a>
+                            <div class="dropdown-menu" aria-labelledby="Settings">
+                                <a class="dropdown-item" href="{% url 'profile-update-page' %}">Edit Profile</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'change-password-page' %}">Change Password</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'logout-page' %}">Logout</a>
+                            </div>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+         <div class="mr-5">
+             <center>
+             {% if user.is_authenticated %}
+                <a href="{% url 'python-page' %}" style="font-style: italic; font-size: 20px; color: #ACDEF5;">Hi, {{user.first_name}}&nbsp;{{user.last_name}}</a>
+             {% endif %}
+             <a href="{% url 'profile-update-page' %}" style="color: #ACDEF5;"><i class="fas fa-user fa-2x"></i></a>
+             </center>
+         </div>
+    </nav>
+    <div class="container card" style="background-color: #E6FAE6; margin-top: 95px;"> <br><br>
+        <center><h2>Python BootCamp 2022</h2></center>
+          <br>
+        <div class="container col-10" style="font-size: 17px; font-family: Times New Roman, Times, serif;">
+            <p><b>
+                Python is an interpreted high-level general-purpose programming language. Its design
+                philosophy emphasizes code readability with its use of significant indentation.
+                Its language constructs as well as its object-oriented approach aim to help programmers write
+                clear, logical code for small and large-scale projects. <br><br>
+
+                Python is dynamically-typed and garbage-collected. It supports multiple programming paradigms,
+                including structured (particularly, procedural), object-oriented and functional programming.
+                It is often described as a "batteries included" language due to its comprehensive standard library. <br><br>
+
+                Guido van Rossum began working on Python in the late 1980s, as a successor to the ABC programming language,
+                and first released it in 1991 as Python 0.9.0. Python 2.0 was released in 2000 and introduced new features,
+                such as list comprehensions and a cycle-detecting garbage collection system.</b>
+            </p> <br>
+            <h5><b>Characteristics of Python</b></h5> <br>
+            <p>
+                <b>Following are important characteristics of Python Programming −<br> </b>
+            </p>
+            <ul>
+                <li style="list-style-type: circle;"><b>It supports functional and structured programming methods as well as OOP.</b></li>
+                <li style="list-style-type: circle;"><b>It can be used as a scripting language or can be compiled to byte-code for building large applications.</b></li>
+                <li style="list-style-type: circle;"><b>It provides very high-level dynamic data types and supports dynamic type checking.</b></li>
+                <li style="list-style-type: circle;"><b>It supports automatic garbage collection.</b></li>
+                <li style="list-style-type: circle;"><b>It can be easily integrated with C, C++, COM, ActiveX, CORBA, and Java.</b></li>
+            </ul>
+            <br>
+            <h5><b>Applications of Python</b></h5> <br>
+            <p>
+                <b>As mentioned before, Python is one of the most widely used language over the web. I'm going to list few of them here:<br> </b>
+            </p>
+            <ul>
+                <li style="list-style-type: circle;"><b>Easy-to-learn − Python has few keywords, simple structure, and a clearly defined syntax. This allows the student to pick
+                    up the language quickly.</b></li>
+                <li style="list-style-type: circle;"><b>Easy-to-read − Python code is more clearly defined and visible to the eyes.</b></li>
+                <li style="list-style-type: circle;"><b>Easy-to-maintain − Python's source code is fairly easy-to-maintain.</b></li>
+                <li style="list-style-type: circle;"><b>A broad standard library − Python's bulk of the library is very portable and cross-platform compatible on UNIX, Windows,
+                    and Macintosh.</b></li>
+                <li style="list-style-type: circle;"><b>Interactive Mode − Python has support for an interactive mode which allows interactive testing and debugging of snippets of code.</b></li>
+                <li style="list-style-type: circle;"><b>Portable − Python can run on a wide variety of hardware platforms and has the same interface on all platforms.</b></li>
+                <li style="list-style-type: circle;"><b>Extendable − You can add low-level modules to the Python interpreter. These modules enable programmers to add to or customize their
+                    tools to be more efficient.</b></li>
+                <li style="list-style-type: circle;"><b>Databases − Python provides interfaces to all major commercial databases.</b></li>
+                <li style="list-style-type: circle;"><b>GUI Programming − Python supports GUI applications that can be created and ported to many system calls, libraries and windows systems,
+                    such as Windows MFC, Macintosh, and the X Window system of Unix.</b></li>
+                <li style="list-style-type: circle;"><b>Scalable − Python provides a better structure and support for large programs than shell scripting.</b></li>
+            </ul>
+            <br>
+        </div>
+    </div>
+    <div class="container-fluid" style="background-color: white;"> <br> <br>
+        <center>
+        <h3>Tutorials</h3> <br> <br>
+        <div class="col-10">
+            <div class="row">
+                <div class="col-md">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/vrQlEhmVFDA" title="YouTube video player" frameborder="3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/vrQlEhmVFDA" title="YouTube video player" frameborder="3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-md">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/0SZodbWUsQU" title="YouTube video player" frameborder="3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div> <br>
+                <div class="col-md">
+                     <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/0SZodbWUsQU" title="YouTube video player" frameborder="3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </center> <br><br>
+    </div> <br>
+    <div class="pt-5 pb-5 footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-xs-12 follow-us">
+                  <h4 class="mt-lg-0 mt-sm-3">Follow Us On Social Media</h4>
+                  <p class="pr-5 text-white-50">Teaching in the Internet age means we must teach tomorrow’s skills today. </p>
+                  <p><a href="#" style="color: white;"><i class="fab fa-facebook-f mr-3"></i></a><a href="#" style="color: white;"><i class="fab fa-instagram mr-3"></i></a><a href="#" style="color: white;"><i class="fab fa-youtube mr-3"></i></a><a href="#" style="color: white;"><i class="fab fa-twitter"></i></a></p>
+                </div>
+                <div class="col-lg-3 col-xs-12 overview">
+                    <h4 class="mt-lg-0 mt-sm-3">Overview</h4>
+                    <ul class="m-0 p-0" style="list-style-type: none;" >
+                        <li>- <a href="#" class="text-white">Blog</a></li>
+                        <li>- <a href="#" class="text-white">Careers</a></li>
+                        <li>- <a href="#" class="text-white">Stay Updated</a></li>
+                        <li>- <a href="#" class="text-white">Help</a></li>
+                        <li>- <a href="#" class="text-white">API</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-xs-12 contact-us">
+                  <h4 class="mt-lg-0 mt-sm-3">Contact Us</h4>
+                  <p><i class="fas fa-map-marker-alt mr-2"></i> Kolkata, India</p>
+                  <p><i class="fas fa-phone mr-2"></i> +91 9876543210</p>
+                  <p><i class="far fa-envelope mr-2"></i> elearning2022@eduweb.com</p>
+                </div>
+          </div>
+          <div class="row mt-5">
+                <div class="col copyright">
+                    <p class="text-white-50">CopyRight 2022 &copy; EduWEB Rajashri Mondal<br> All Rights Reserved.</p>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-white-50"> About Us |</a><a href="#" class="text-white-50"> Terms & Conditions |</a><a href="#" class="text-white-50"> Privacy Policies</a>
+                </div>
+          </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>

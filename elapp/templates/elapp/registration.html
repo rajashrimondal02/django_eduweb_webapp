@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'elapp/css/elstyle1.css' %}">
+    <link rel="stylesheet" href="{% static 'elapp/css/elstyle2.css' %}">
+    <title>Register.</title>
+</head>
+<body>
+    <div id="background"><br><br><br>
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100 ">
+                <div class="card m-2" style="border-radius: 18px;" >
+                    <div class="row g-0">
+                        <div class="col-l-6" style="background-color: #ffffff; border-radius: 18px;">
+                            <h3 style="font-family: Times New Roman, Times, serif; color: #0C1B93; margin-left: 50px; margin-top: 65px; margin-bottom:0px;"><b>Registration</b></h3>
+                            <form style="margin-bottom: 0px;" id="form" name="user-reg" method="post" novalidate>
+                                {% csrf_token %}
+                                {% for fm in frm %}
+                                <div class="form-group" >
+                                    <label class="col">{{ fm }}</label> <br>
+                                    <h6 class="text-danger" style="margin-left: 16px; font-size: 13px;">{{ fm.errors }}</h6>
+                                </div>
+                                {% endfor %}
+                                <div class="remember">
+                                    <label style="font-size: 14px; margin-left: 10px;" ><input type="checkbox" name=""> Clicking this you accept our terms and conditions.</label>
+                                </div> <br>
+                                <input type="submit" class="col-11 btn btn-outline-success" style="margin-left: 15px;" value="Register">
+                            </form>
+                            <br>
+                            {% if messages %}
+                                {% for msg in messages %}
+                                    <div class="alert alert-danger col-4" style="margin-left: 65px;"><center>{{ msg }}</center></div>
+                                {% endfor %}
+                            {% endif %}
+                            <br><br>
+                        </div>
+                        <div class="col-md-6 d-none d-xl-block"  style="height: 100%">
+                            <img src="/static/elapp/images/img2.jpeg" style=" border-radius: 0px 18px 18px 0px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container"><br>
+                <h6 style="font-family: Times New Roman, Times, serif; color: #0E1A7D; margin-left: 120px;"><b>Already Registered ? Then <a href="{% url 'login-page' %}" style="color: red;">Login</a></b></h6>
+            </div><br> <br>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>
